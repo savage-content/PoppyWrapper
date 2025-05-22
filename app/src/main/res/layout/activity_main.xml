@@ -10,7 +10,74 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Bottom bar with two big buttons -->
+    <!-- Top bar with buttons and chevron -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="top"
+        android:background="#F5F5F5"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/button_social"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Social Media URL"
+            android:textSize="20sp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#222222"
+            android:elevation="4dp"/>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/button_chevron_top"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/arrow_up_float"
+            android:contentDescription="Hide Top Buttons"
+            android:scaleType="centerInside"
+            android:padding="8dp"/>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/button_ai_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="AI Chat"
+            android:textSize="20sp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#222222"
+            android:elevation="4dp"/>
+    </LinearLayout>
+
+    <!-- Floating chevron for restoring the top bar (initially hidden) -->
+    <ImageButton
+        android:id="@+id/button_chevron_restore_top"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/arrow_down_float"
+        android:contentDescription="Show Top Buttons"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:padding="12dp"/>
+
+    <!-- Bottom bar with buttons and chevron -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -19,7 +86,8 @@
         android:background="#F5F5F5"
         android:orientation="horizontal"
         android:elevation="8dp"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:gravity="center_vertical">
 
         <Button
             android:id="@+id/button_text"
@@ -33,7 +101,21 @@
             android:elevation="4dp"/>
 
         <Space
-            android:layout_width="16dp"
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/button_chevron"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/arrow_down_float"
+            android:contentDescription="Hide Bottom Buttons"
+            android:scaleType="centerInside"
+            android:padding="8dp"/>
+
+        <Space
+            android:layout_width="8dp"
             android:layout_height="match_parent" />
 
         <Button
@@ -48,4 +130,17 @@
             android:elevation="4dp"/>
     </LinearLayout>
 
+    <!-- Floating chevron for restoring the bottom bar (initially hidden) -->
+    <ImageButton
+        android:id="@+id/button_chevron_restore"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/arrow_up_float"
+        android:contentDescription="Show Bottom Buttons"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:padding="12dp"/>
 </FrameLayout>
